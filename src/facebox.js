@@ -102,6 +102,9 @@
       if ($('#facebox .loading').length == 1) return true
       showOverlay()
 
+      // FIX: https://github.com/defunkt/facebox/pull/30/files
+      $("body").append( $("#facebox .content *:first").remove().hide() );
+
       $('#facebox .content').empty().
         append('<div class="loading"><img src="'+$.facebox.settings.loadingImage+'"/></div>')
 
@@ -153,7 +156,8 @@
       return false
     }
 
-    return this.bind('click.facebox', clickHandler)
+    // FIX: https://github.com/defunkt/facebox/pull/33/files
+    return this.live('click.facebox', clickHandler)
   }
 
   /*
