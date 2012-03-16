@@ -102,7 +102,7 @@
       if ($('#facebox .loading').length == 1) return true
       showOverlay()
 
-      // FIX: https://github.com/defunkt/facebox/pull/30/files
+      // PR: https://github.com/defunkt/facebox/pull/30/files
       $("body").append( $("#facebox .content *:first").remove().hide() );
 
       $('#facebox .content').empty().
@@ -156,7 +156,7 @@
       return false
     }
 
-    // FIX: https://github.com/defunkt/facebox/pull/33/files
+    // PR: https://github.com/defunkt/facebox/pull/33/files
     return this.live('click.facebox', clickHandler)
   }
 
